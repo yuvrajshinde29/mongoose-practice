@@ -15,4 +15,6 @@ const userSchema = new mongoose.Schema({
 // userSchema.set("toJSON", { getters: true });
 // userSchema.set("toObject", { getters: true });
 
+userSchema.index({ name: "text", email: "text" });
+
 module.exports = mongoose.model("User", userSchema);

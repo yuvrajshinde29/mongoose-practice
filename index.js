@@ -1,4 +1,6 @@
+require("dotenv").config();
 const connectDB = require("./config/dbConfig");
+const { matchEx1 } = require("./controllers/aggregation");
 const {
   create,
   createUsingNew,
@@ -17,8 +19,18 @@ const {
   query7,
   query8,
 } = require("./controllers/crudMethods");
+const {
+  textOperator,
+  regexOperator,
+} = require("./controllers/evaluationOperators");
+const {
+  andOperator,
+  orOperator,
+  norOperator,
+  notOperator,
+} = require("./controllers/logicalOperators");
 
 //mongoDB connection
 connectDB().then(() => {
-    query8();
+  matchEx1();
 });
