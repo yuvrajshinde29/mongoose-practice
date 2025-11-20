@@ -1,6 +1,6 @@
 require("dotenv").config();
 const connectDB = require("./config/dbConfig");
-const { matchEx1 } = require("./controllers/aggregation");
+const { matchEx1, projectEx1, addFieldsEx, groupExample } = require("./controllers/aggregation");
 const {
   create,
   createUsingNew,
@@ -32,5 +32,5 @@ const {
 
 //mongoDB connection
 connectDB().then(() => {
-  matchEx1();
+  groupExample();
 });
